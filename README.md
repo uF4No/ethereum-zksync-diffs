@@ -1,3 +1,5 @@
+![](./zksync-dark.png)
+
 # Ethereum - ZKsync diffs
 
 This repo contains two sample projects with the same smart contracts, deployment script and a script to interact with the contract.

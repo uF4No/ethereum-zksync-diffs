@@ -1,0 +1,38 @@
+# Builds
+out/
+dist/
+zkout/
+artifacts-zk/
+typechain-types/
+
+# Non-mainnet deployment artifacts
+broadcast/*.sol/**/*.json
+!broadcast/*.sol/1/run-*.json
+
+# Private files
+.env
+
+# Cache
+cache/
+cache-zk/
+cache-zk/**/*
+cache-zk/*
+
+# Dependencies
+node_modules/
+
+# devenv
+.devenv
+.direnv
+
+# coverage
+.coverage/
+lcov.info
+
+Notes.md
+deployments/
+deployments/**/*
+deployments-zk/
+deployments-zk/**/*
+
+era_test_node.log

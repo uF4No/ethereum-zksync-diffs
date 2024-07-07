@@ -1,6 +1,6 @@
 
 async function main() {
-    const CONTRACT_ADDRESS = "0xA9Ca74eA7413dB2d228BDd6B0091Ab30c47F4E90";
+    const CONTRACT_ADDRESS = "0xDa8CEBEBAF8739B22d2a98B91F9eE913f48CD88e";
 
     const { deployer } = await getNamedAccounts(); 
 
@@ -15,7 +15,7 @@ async function main() {
     console.log(`Total messages: ${nMessages}`);
 
     console.log(`Sending a message...`);
-    const tx = await myContract.sendMessage("Hello, World!");
+    const tx = await myContract.sendMessage("Hello, ZK Lambda!");
     await tx.wait();
 
     console.log("Trx hash:", tx.hash);

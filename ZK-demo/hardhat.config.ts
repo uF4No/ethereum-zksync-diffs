@@ -1,11 +1,9 @@
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
-
-// Step 2
 import "hardhat-deploy";
 import "hardhat-deploy-ethers";
 
-// ZK Step 1
+// Step 1: import ZKsync plugin
 import "@matterlabs/hardhat-zksync";
 
 import dotenv from "dotenv";
@@ -13,20 +11,19 @@ dotenv.config();
 
 const config: HardhatUserConfig = {
   solidity: "0.8.24",
-  // Step 2
   networks: {
-    hardhat: {
-      zksync: false
-    },
+    hardhat: {},
     sepolia:{
       url: "https://ethereum-sepolia-rpc.publicnode.com",
       accounts:[process.env.DEPLOYER as any],
+      zksync: false,
     },
+    // Step 2: Add ZKsync testnet network
     zksyncSepolia:{
       url: "https://sepolia.era.zksync.dev",
       ethNetwork: "sepolia",
-      zksync: true,
       accounts:[process.env.DEPLOYER as any],
+      zksync: true,
 
     }
   },

@@ -1,4 +1,4 @@
-// ./deploy/deploy.ts 
+// ./deploy/00-deploy.ts 
 import { HardhatRuntimeEnvironment } from "hardhat/types"; 
 import { DeployFunction } from "hardhat-deploy/types"; 
  
@@ -11,7 +11,6 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
  */ 
   const { deployer } = await getNamedAccounts(); 
   console.log("Deploying from:", deployer);
-  const EXPLORER_URL="https://sepolia.explorer.zksync.io/address/"
 
   const res = await deploy("ZeekMessages", { 
     from: deployer, 
@@ -19,12 +18,11 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     log: true, 
   }); 
 
+
   await hre.run("verify:verify", {
     address: res.address,
     constructorArguments: [],
   });
-
-  console.log(`Successfully verified contract ZeekMessages on the block explorer. ${EXPLORER_URL}${res.address}#contract`)
 
 }; 
 export default func;

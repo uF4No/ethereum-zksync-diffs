@@ -15,7 +15,7 @@ async function main() {
     console.log(`Total messages: ${nMessages}`);
 
     console.log(`Sending a message...`);
-    const tx = await myContract.sendMessage("Hello, Lambda!");
+    const tx = await myContract.sendMessage("Hello, devs!");
     await tx.wait();
 
     console.log("Trx hash:", tx.hash);
